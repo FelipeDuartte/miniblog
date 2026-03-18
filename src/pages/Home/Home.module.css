@@ -1,0 +1,102 @@
+/* ============================================
+   MiniBlog — Home.module.css
+   ============================================ */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 2em;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Barra de busca */
+.searchForm {
+  max-width: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 2.5em;
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.4em 0.4em 0.4em 1em;
+  box-shadow: var(--shadow-soft);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.searchForm:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 86, 42, 0.1);
+}
+
+/* Sobrescreve estilos globais do input dentro da search bar */
+.searchForm input {
+  flex: 1;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0.3em 0 !important;
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: var(--ink);
+  width: auto;
+  min-width: 0;
+}
+
+.searchForm input::placeholder {
+  color: var(--ink-muted);
+}
+
+/* Ajusta o .btn global para encaixar dentro do form */
+.searchForm button {
+  flex-shrink: 0;
+  padding: 0.5em 1.1em !important;
+  font-size: 0.875em !important;
+  margin: 0 !important;
+  transform: none !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* Estado sem posts */
+.noposts {
+  text-align: center;
+  padding: 3em 2em;
+  animation: fadeUp 0.4s ease both;
+}
+
+.noposts p {
+  font-family: var(--font-display);
+  font-size: 1.15em;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-bottom: 1.5em;
+}
+
+.noposts a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65em 1.4em;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .home {
+    padding: 2em 1.25em;
+  }
+
+  .searchForm {
+    width: 100%;
+  }
+}

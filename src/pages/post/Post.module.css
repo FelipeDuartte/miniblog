@@ -1,0 +1,107 @@
+/* ============================================
+   MiniBlog — PostContainer.module.css
+   ============================================ */
+
+.post_container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3em 2em;
+  animation: fadeUp 0.5s ease both;
+}
+
+.post_container h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6em, 3.5vw, 2.2em);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.75em;
+  position: relative;
+  padding-bottom: 0.6em;
+}
+
+.post_container h3::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+  margin: 0.4em auto 0;
+}
+
+/* Imagem do post */
+.imgPost {
+  width: 100%;
+  max-width: 560px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.75em;
+  transition: box-shadow var(--transition);
+}
+
+.imgPost:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Tags */
+.post_container .tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.tags p {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.82em;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.tags span {
+  display: inline-block;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.78em;
+  padding: 0.25em 0.75em;
+  border-radius: 99px;
+  border: 1px solid rgba(200, 86, 42, 0.2);
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.tags span:hover {
+  background-color: var(--accent);
+  color: var(--warm-white);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .post_container {
+    padding: 2em 1.25em;
+  }
+
+  .imgPost {
+    max-height: 260px;
+  }
+}

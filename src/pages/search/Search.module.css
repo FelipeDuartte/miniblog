@@ -1,0 +1,66 @@
+/* ============================================
+   MiniBlog — Search.module.css
+   ============================================ */
+
+.search_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3em 2em;
+  animation: fadeUp 0.5s ease both;
+}
+
+.search_container h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8em, 4vw, 2.8em);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.35em;
+  position: relative;
+}
+
+/* Termo buscado em destaque laranja */
+.search_container h1 span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* Linha decorativa sob o título */
+.search_container h1::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+  margin: 0.4em 0 0;
+}
+
+.search_container p {
+  font-size: 0.92em;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 2em;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .search_container {
+    padding: 2em 1.25em;
+    align-items: flex-start;
+  }
+
+  .search_container h1::after {
+    margin: 0.4em auto 0;
+  }
+}

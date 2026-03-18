@@ -1,0 +1,121 @@
+/* ============================================
+   MiniBlog — PostDetail.css
+   Depende das CSS variables de index.css
+   ============================================ */
+
+.post_detail {
+  margin-bottom: 3em;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Imagem hero */
+.post_detail img {
+  width: 100%;
+  max-width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2em;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+/* Título com barra decorativa */
+.post_detail h2 {
+  font-size: clamp(1.8em, 4vw, 2.6em);
+  margin-bottom: 0.75em;
+  line-height: 1.2;
+  position: relative;
+  padding-top: 1.25em;
+}
+
+.post_detail h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+}
+
+/* Tags */
+.post_detail .tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.tags p {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.82em;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.tags span {
+  display: inline-block;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.78em;
+  padding: 0.25em 0.75em;
+  border-radius: 99px;
+  border: 1px solid rgba(200, 86, 42, 0.2);
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.tags span:hover {
+  background-color: var(--accent);
+  color: var(--warm-white);
+}
+
+/* Autor */
+.createdby {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-style: normal;
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--ink-muted);
+  margin-bottom: 2em;
+  padding: 0.6em 1em;
+  background: var(--accent-light);
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.createdby::before {
+  content: '✍';
+  font-style: normal;
+  font-size: 1em;
+}
+
+/* Corpo do post */
+.post_detail .post_body,
+.post_detail > p {
+  font-size: 1.05em;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  max-width: 680px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .post_detail img {
+    height: 220px;
+  }
+}

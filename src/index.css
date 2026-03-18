@@ -1,0 +1,278 @@
+/* ============================================
+   MiniBlog — index.css
+   Global styles, reset, variáveis e utilitários
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+  --cream: #faf7f2;
+  --warm-white: #fffef9;
+  --ink: #1a1714;
+  --ink-soft: #3d3830;
+  --ink-muted: #7a7267;
+  --accent: #c8562a;
+  --accent-light: #f0e8e0;
+  --accent-hover: #a84220;
+  --gold: #c9a84c;
+  --border: #e5ddd3;
+  --border-strong: #c8bfb3;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --shadow-soft: 0 2px 20px rgba(26, 23, 20, 0.06);
+  --shadow-card: 0 4px 40px rgba(26, 23, 20, 0.10);
+  --shadow-hover: 0 8px 50px rgba(26, 23, 20, 0.16);
+
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============================================
+   LINKS & BOTÕES GLOBAIS
+   ============================================ */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+nav button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: 1em;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+nav button:hover {
+  color: var(--accent);
+}
+
+/* ============================================
+   FORMULÁRIOS GLOBAIS
+   ============================================ */
+form {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.1em;
+}
+
+label span {
+  margin-bottom: 0.4em;
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.7em 1em;
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: var(--ink);
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 86, 42, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ink-muted);
+  font-family: var(--font-body);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+select {
+  width: 100%;
+  padding: 0.7em 1em;
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: var(--ink);
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 86, 42, 0.1);
+}
+
+button[disabled] {
+  background-color: var(--border-strong) !important;
+  color: var(--ink-muted) !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ============================================
+   BOTÕES UTILITÁRIOS (.btn)
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.65em 1.4em;
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--warm-white);
+  background-color: var(--ink);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  color: var(--warm-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(200, 86, 42, 0.32);
+}
+
+.btn.btn-dark {
+  background-color: var(--ink);
+  color: var(--warm-white);
+}
+
+.btn.btn-dark:hover {
+  background-color: var(--ink-soft);
+  box-shadow: none;
+}
+
+.btn.btn-outline {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--border-strong);
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--ink);
+  color: var(--warm-white);
+  border-color: var(--ink);
+  box-shadow: none;
+}
+
+.btn.btn-danger {
+  background-color: transparent;
+  color: #c0392b;
+  border: 1.5px solid #c0392b;
+}
+
+.btn.btn-danger:hover {
+  background-color: #c0392b;
+  color: var(--warm-white);
+  border-color: #c0392b;
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.3);
+}
+
+/* ============================================
+   FEEDBACK: ERRO E SUCESSO
+   ============================================ */
+.error {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #7a1f1f;
+  background-color: #fdecea;
+  border: 1px solid #f5c0bc;
+  border-left: 4px solid #c0392b;
+  padding: 0.7em 1em;
+  border-radius: var(--radius-sm);
+  font-size: 0.88em;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #1a4d2a;
+  background-color: #eaf6ec;
+  border: 1px solid #b5dfc0;
+  border-left: 4px solid #27ae60;
+  padding: 0.7em 1em;
+  border-radius: var(--radius-sm);
+  font-size: 0.88em;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+/* ============================================
+   SCROLLBAR (webkit)
+   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-muted); }

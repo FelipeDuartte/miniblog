@@ -1,0 +1,133 @@
+/* ============================================
+   MiniBlog — CreatePost.module.css
+   ============================================ */
+
+.create_post {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3.5em 2em;
+  animation: fadeUp 0.5s ease both;
+}
+
+.create_post h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8em, 4vw, 2.4em);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  position: relative;
+  margin-bottom: 1em;
+  padding-bottom: 0.6em;
+}
+
+/* Linha decorativa sob o título */
+.create_post h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+  margin: 0.4em auto 0;
+}
+
+.create_post p {
+  font-size: 0.97em;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  margin-bottom: 2em;
+  max-width: 480px;
+}
+
+/* Formulário de criação de post */
+.create_post form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  text-align: left;
+}
+
+.create_post label {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 0.4em;
+  letter-spacing: 0.01em;
+}
+
+.create_post input,
+.create_post textarea,
+.create_post select {
+  width: 100%;
+  padding: 0.7em 1em;
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: var(--ink);
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.create_post input:focus,
+.create_post textarea:focus,
+.create_post select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 86, 42, 0.1);
+}
+
+.create_post textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.create_post button[type="submit"],
+.create_post input[type="submit"] {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.65em 1.6em;
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--warm-white);
+  background-color: var(--ink);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.create_post button[type="submit"]:hover,
+.create_post input[type="submit"]:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(200, 86, 42, 0.32);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .create_post {
+    padding: 2em 1.25em;
+  }
+
+  .create_post button[type="submit"] {
+    width: 100%;
+    justify-content: center;
+  }
+}

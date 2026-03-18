@@ -1,0 +1,79 @@
+/* ============================================
+   MiniBlog — Footer.css
+   Depende das CSS variables de index.css
+   ============================================ */
+
+.footer {
+  height: auto;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  background-color: var(--ink);
+  color: var(--border);
+  padding: 3em 2em;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grain texture overlay */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Accent line no topo do footer */
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 0 0 3px 3px;
+}
+
+.footer .brand {
+  font-family: var(--font-display);
+  font-size: 1.4em;
+  color: var(--warm-white);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Remove o ponto decorativo do brand no footer */
+.footer .brand::after {
+  display: none;
+}
+
+.footer p {
+  font-size: 0.82em;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.footer a {
+  color: var(--gold);
+  transition: color var(--transition);
+}
+
+.footer a:hover {
+  color: var(--warm-white);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .footer {
+    min-height: 160px;
+    padding: 2.5em 1.5em;
+  }
+}

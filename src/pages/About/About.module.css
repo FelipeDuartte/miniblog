@@ -1,0 +1,76 @@
+/* ============================================
+   MiniBlog — About.module.css
+   ============================================ */
+
+.about {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  animation: fadeUp 0.5s ease both;
+}
+
+.about h1,
+.about h2 {
+  font-family: var(--font-display);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+/* Linha decorativa sob o título */
+.about h1::after,
+.about h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+  margin: 0.4em auto 0;
+}
+
+.about p {
+  font-size: 1em;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  margin-bottom: 2em;
+  max-width: 480px;
+}
+
+.about a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.5em;
+  padding: 0.65em 1.4em;
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--warm-white);
+  background-color: var(--ink);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.about a:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(200, 86, 42, 0.32);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .about {
+    padding: 2.5em 1.25em;
+  }
+}

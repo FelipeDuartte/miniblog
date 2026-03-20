@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate} from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <AuthProvider value={{ user }}>
-        <BrowserRouter>
+        <HashRouter>
           <Nav />
           <div className="container">
             <Routes>
@@ -66,7 +66,7 @@ function App() {
             </Routes>
           </div>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </AuthProvider>
     </div>
   );

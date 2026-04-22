@@ -44,13 +44,6 @@ Este projeto foi desenvolvido para:
 
 ---
 
-## 📸 Preview
-
-🔗 Acesse o projeto:  
-👉 https://felipeduartte.github.io/miniblog/
-
----
-
 ## 📄 Licença
 
 Este projeto está sob a licença **MIT**.
